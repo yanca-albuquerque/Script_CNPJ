@@ -54,12 +54,14 @@ def processar_agencias(input_file, output_file):
             if len(socios) > 1:
                 df.at[idx, "Nome Sócio 2"] = socios[1].get("nome", "")
                 df.at[idx, "Qualificação Sócio 2"] = socios[1].get("qual", "")
-
+		    
+# Tempo para não sobrecarregar a API.
         time.sleep(20)  
 
     df.to_excel(output_file, index=False)
     print(f"Informações salvas em: {output_file}")
 
+# Informe o local para salvar os arquivos.
 input_file = r"C:\Users\Documents\Teste\entrada.xlsx"
 output_file = r"C:\Users\Documents\Teste\resultado.xlsx"
 
